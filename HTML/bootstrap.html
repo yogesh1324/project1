@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Register/Login Page with Bootstrap</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .switch-form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .switch-form a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <form id="registerForm">
+            <h2 class="text-center">Register</h2>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-block">Register</button>
+
+            <p class="switch-form">Already have an account? <a href="#" onclick="showLoginForm()">Login here</a></p>
+        </form>
+
+        <form id="loginForm" style="display: none;">
+            <h2 class="text-center">Login</h2>
+            <div class="form-group">
+                <label for="loginUsername">Username:</label>
+                <input type="text" class="form-control" id="loginUsername" name="loginUsername" required>
+            </div>
+
+            <div class="form-group">
+                <label for="loginPassword">Password:</label>
+                <input type="password" class="form-control" id="loginPassword" name="loginPassword" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+
+            <p class="switch-form">Don't have an account? <a href="#" onclick="showRegisterForm()">Register here</a></p>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function showLoginForm() {
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+        }
+
+        function showRegisterForm() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
